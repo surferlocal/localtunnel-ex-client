@@ -23,4 +23,5 @@ erl_crash.dump
 localtunnel_ex_client-*.tar
 
 .elixir_ls
+.vscode
 

@@ -1,6 +1,6 @@
 # LocaltunnelExClient
 
-**TODO: Add description**
+Automatically open tunnel to your development server for webhooks.
 
 ## Installation
 

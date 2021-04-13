@@ -36,7 +36,7 @@ defmodule LocaltunnelExClient do
     end
 
     {:ok, _spawner_pid, _spawner_os_pid} =
-      Exexec.run_link([lt, "--port", local_port()], stdout: true)
+      Exexec.run_link([lt, "--port", local_port()] ++ extra_args(), stdout: true)
 
     {:noreply, {:not_ready, awaiting}}
   end
@@ -70,4 +70,5 @@ defmodule LocaltunnelExClient do
 
   defp constant_url, do: Application.fetch_env(:localtunnel_ex_client, :constant_url)
   defp local_port, do: Application.get_env(:localtunnel_ex_client, :local_port, "4000")
+  defp extra_args, do: Application.get_env(:localtunnel_ex_client, :extra_args, [])
 end
